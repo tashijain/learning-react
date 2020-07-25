@@ -5,9 +5,6 @@ class DishdetailComponent extends Component {
 
     constructor(props) {
         super(props);
-
-        this.state = {
-        };
     }
 
     renderDish(dish) {
@@ -34,7 +31,7 @@ class DishdetailComponent extends Component {
                 return (
                         <ul key={singleComment.id} className="list-unstyled">
                             <li>{singleComment.comment}</li>
-                            <li>-- {singleComment.author} , {singleComment.date}</li>
+                            <li>-- {singleComment.author} , {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(singleComment.date)))}</li>
                         </ul>
                 );
             });
