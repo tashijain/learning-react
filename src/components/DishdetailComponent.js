@@ -42,7 +42,7 @@ import {Card, CardBody, CardImg, CardTitle, CardText} from 'reactstrap';
         }
     }
 
-    const DishdetailComponent = (props) => {
+    const Dishdetail = (props) => {
         if(props.selectedDish != null) {
             return (
                 <div className="container">
@@ -63,4 +63,4 @@ import {Card, CardBody, CardImg, CardTitle, CardText} from 'reactstrap';
 
 
 
-export default DishdetailComponent;
+export default Dishdetail;

@@ -12,7 +12,7 @@ import { Card, CardImg, CardImgOverlay, CardBody, CardText, CardTitle } from 're
         );
     }
         
-    const MenuComponent = (props) => {
+    const Menu = (props) => {
         const menu = props.dishes.map((dish) => {
             return (
                 // always give a key property when rendering a list
@@ -31,4 +31,4 @@ import { Card, CardImg, CardImgOverlay, CardBody, CardText, CardTitle } from 're
         );
     }
        
-export default MenuComponent;
+export default Menu;
