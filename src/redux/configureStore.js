@@ -1,10 +1,12 @@
 // configure store in a separate file and then export it, just easier
 
-import { createStore, combineReducers } from "redux";
+import { createStore, combineReducers, applyMiddleware } from "redux";
 import { Dishes } from "./dishes";
 import { Comments } from "./comments";
 import { Promotions } from "./promotions";
 import { Leaders } from "./leaders";
+import thunk from 'redux-thunk';
+import logger from 'redux-logger';
 
 
 export const ConfigureStore = () => {
@@ -14,8 +16,10 @@ export const ConfigureStore = () => {
       comments: Comments,
       promotions: Promotions,
       leaders: Leaders
-    })
+    }),
+    // returns store enhancer
+    applyMiddleware(thunk, logger)
   );
-
+    
   return store;
 };

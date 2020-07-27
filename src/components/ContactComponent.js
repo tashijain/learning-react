@@ -11,10 +11,11 @@ import { Link } from "react-router-dom";
 import { Control, LocalForm, Errors } from "react-redux-form";
 
 const required = (val) => val && val.length;
-const maxLength = (len) => (val) => !(val) || (val.length <= len);
-const minLength = (len) => (val) => (val) && (val.length >= len);
+const maxLength = (len) => (val) => !val || val.length <= len;
+const minLength = (len) => (val) => val && val.length >= len;
 const isNum = (val) => !isNaN(Number(val));
-const validEmail = (val) => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val);
+const validEmail = (val) =>
+  /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val);
 
 class Contact extends Component {
   constructor(props) {
@@ -29,7 +30,6 @@ class Contact extends Component {
   }
 
   render() {
-    
     return (
       <div className="container">
         <div className="row">
@@ -77,7 +77,7 @@ class Contact extends Component {
               >
                 <i className="fa fa-phone"></i> Call
               </a>
-              <a role="button" className="btn btn-info">
+              <a role="button" className="btn btn-info" href="/">
                 <i className="fa fa-skype"></i> Skype
               </a>
               <a
@@ -108,18 +108,20 @@ class Contact extends Component {
                     placeholder="First Name"
                     className="form-control"
                     validators={{
-                        required, minLength: minLength(3), maxLength: maxLength(15)
+                      required,
+                      minLength: minLength(3),
+                      maxLength: maxLength(15),
                     }}
                   />
-                  <Errors 
-                  className="text-danger"
-                  model=".firstname"
-                  show="touched"
-                  messages={{
-                      required: 'Required',
-                      minLength: 'Must be greater than 2 characters',
-                      minLength: 'Must be 15 characters or less'
-                  }}
+                  <Errors
+                    className="text-danger"
+                    model=".firstname"
+                    show="touched"
+                    messages={{
+                      required: "Required",
+                      minLength: "Must be greater than 2 characters",
+                      maxLength: "Must be 15 characters or less",
+                    }}
                   />
                 </Col>
               </Row>
@@ -135,18 +137,20 @@ class Contact extends Component {
                     placeholder="Last Name"
                     className="form-control"
                     validators={{
-                        required, minLength: minLength(3), maxLength: maxLength(15)
+                      required,
+                      minLength: minLength(3),
+                      maxLength: maxLength(15),
                     }}
                   />
-                  <Errors 
-                  className="text-danger"
-                  model=".lastname"
-                  show="touched"
-                  messages={{
-                      required: 'Required',
-                      minLength: 'Must be greater than 2 characters',
-                      minLength: 'Must be 15 characters or less'
-                  }}
+                  <Errors
+                    className="text-danger"
+                    model=".lastname"
+                    show="touched"
+                    messages={{
+                      required: "Required",
+                      minLength: "Must be greater than 2 characters",
+                      maxLength: "Must be 15 characters or less",
+                    }}
                   />
                 </Col>
               </Row>
@@ -162,19 +166,22 @@ class Contact extends Component {
                     placeholder="Tel. Number"
                     className="form-control"
                     validators={{
-                        required, minLength: minLength(3), maxLength: maxLength(15), isNum
+                      required,
+                      minLength: minLength(3),
+                      maxLength: maxLength(15),
+                      isNum,
                     }}
                   />
-                  <Errors 
-                  className="text-danger"
-                  model=".telnum"
-                  show="touched"
-                  messages={{
-                      required: 'Required',
-                      minLength: 'Must be greater than 2 number',
-                      minLength: 'Must be 15 numbers or less',
-                      isNum: 'Must be a number'
-                  }}
+                  <Errors
+                    className="text-danger"
+                    model=".telnum"
+                    show="touched"
+                    messages={{
+                      required: "Required",
+                      minLength: "Must be greater than 2 number",
+                      maxLength: "Must be 15 numbers or less",
+                      isNum: "Must be a number",
+                    }}
                   />
                 </Col>
               </Row>
@@ -190,17 +197,18 @@ class Contact extends Component {
                     placeholder="Email"
                     className="form-control"
                     validators={{
-                        required, validEmail
+                      required,
+                      validEmail,
                     }}
                   />
-                  <Errors 
-                  className="text-danger"
-                  model=".email"
-                  show="touched"
-                  messages={{
-                      required: 'Required',
-                      validEmail: 'Invalid Email Address'
-                  }}
+                  <Errors
+                    className="text-danger"
+                    model=".email"
+                    show="touched"
+                    messages={{
+                      required: "Required",
+                      validEmail: "Invalid Email Address",
+                    }}
                   />
                 </Col>
               </Row>
