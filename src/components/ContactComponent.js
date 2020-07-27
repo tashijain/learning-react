@@ -25,8 +25,17 @@ class Contact extends Component {
   }
 
   handleSubmit(values) {
+    this.props.postFeedback(
+      values.firstname,
+      values.lastname,
+      values.telnum,
+      values.email,
+      values.agree,
+      values.contactType,
+      values.message
+    );
     console.log("Current state is:" + JSON.stringify(values));
-    alert("Current state is:" + JSON.stringify(values));
+    alert("Thank you for your feedback!");
     this.props.resetFeedbackForm();
   }
 
@@ -96,7 +105,10 @@ class Contact extends Component {
             <h3>Send Us Your Feedback</h3>
           </div>
           <div className="col-12 col-md-9">
-            <Form model="feedback" onSubmit={(values) => this.handleSubmit(values)}>
+            <Form
+              model="feedback"
+              onSubmit={(values) => this.handleSubmit(values)}
+            >
               <Row className="form-group">
                 <Label htmlFor="firstname" md={2}>
                   First Name
@@ -258,7 +270,7 @@ class Contact extends Component {
                   </Button>
                 </Col>
               </Row>
-            </ Form>
+            </Form>
           </div>
         </div>
       </div>
