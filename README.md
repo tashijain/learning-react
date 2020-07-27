@@ -1,1 +1,3 @@
-## Restaurant Web Application 
+### Restaurant Web Application
+
+## Concepts covered:
