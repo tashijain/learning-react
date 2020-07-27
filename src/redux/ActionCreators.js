@@ -3,15 +3,55 @@ import { baseURL } from "../shared/baseURL";
 
 // creates action object
 // every action object must have a type
-export const addComment = (dishId, rating, author, comment) => ({
+export const addComment = (comment) => ({
   type: ActionTypes.ADD_COMMENT,
-  payload: {
+  payload: comment,
+});
+
+export const postComment = (dishId, rating, author, comment) => (dispatch) => {
+  const newComment = {
     dishId: dishId,
     rating: rating,
     author: author,
     comment: comment,
-  },
-});
+  };
+  newComment.date = new Date().toISOString();
+
+  return fetch(baseURL + "comments", {
+    method: "POST",
+    body: JSON.stringify(newComment),
+    headers: {
+      "Content-Type": "application/json",
+    },
+    credentials: "same-origin",
+  })
+    .then(
+      // get a response from server: response could be ok or error returned as response by the server
+      (response) => {
+        // status 200
+        if (response.ok) {
+          return response;
+        } else {
+          var error = new Error(
+            "Error " + response.status + ": " + response.statusText
+          );
+          error.response = response;
+          throw error;
+        }
+      },
+      // don't get a response from the server so throw an error
+      (error) => {
+        var errmess = new Error(error.message);
+        throw errmess;
+      }
+    )
+    .then((response) => response.json())
+    .then((response) => dispatch(addComment(response)))
+    .catch((error) => {
+      console.log("Post Comments ", error.message);
+      alert("Your comment could not be posted\nError: " + error.message);
+    });
+};
 
 // thunk since it's returning a function not an action object
 // this thunk does two dispatches
