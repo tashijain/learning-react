@@ -1,6 +1,5 @@
 import * as ActionTypes from "./ActionTypes";
 import { baseURL } from "../shared/baseURL";
-import { initialFeedback } from "./forms";
 
 // creates action object
 // every action object must have a type
