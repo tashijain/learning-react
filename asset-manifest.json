@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/restaurant-web-app-react/static/css/main.d1679a28.chunk.css",
+    "main.js": "/restaurant-web-app-react/static/js/main.f02b93f1.chunk.js",
+    "main.js.map": "/restaurant-web-app-react/static/js/main.f02b93f1.chunk.js.map",
+    "runtime-main.js": "/restaurant-web-app-react/static/js/runtime-main.79df147f.js",
+    "runtime-main.js.map": "/restaurant-web-app-react/static/js/runtime-main.79df147f.js.map",
+    "static/css/2.4b180125.chunk.css": "/restaurant-web-app-react/static/css/2.4b180125.chunk.css",
+    "static/js/2.40cc3072.chunk.js": "/restaurant-web-app-react/static/js/2.40cc3072.chunk.js",
+    "static/js/2.40cc3072.chunk.js.map": "/restaurant-web-app-react/static/js/2.40cc3072.chunk.js.map",
+    "index.html": "/restaurant-web-app-react/index.html",
+    "precache-manifest.299e159718576a8e95a3471aecd8f6c9.js": "/restaurant-web-app-react/precache-manifest.299e159718576a8e95a3471aecd8f6c9.js",
+    "service-worker.js": "/restaurant-web-app-react/service-worker.js",
+    "static/css/2.4b180125.chunk.css.map": "/restaurant-web-app-react/static/css/2.4b180125.chunk.css.map",
+    "static/css/main.d1679a28.chunk.css.map": "/restaurant-web-app-react/static/css/main.d1679a28.chunk.css.map",
+    "static/js/2.40cc3072.chunk.js.LICENSE.txt": "/restaurant-web-app-react/static/js/2.40cc3072.chunk.js.LICENSE.txt",
+    "static/media/font-awesome.min.css": "/restaurant-web-app-react/static/media/fontawesome-webfont.fee66e71.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.79df147f.js",
+    "static/css/2.4b180125.chunk.css",
+    "static/js/2.40cc3072.chunk.js",
+    "static/css/main.d1679a28.chunk.css",
+    "static/js/main.f02b93f1.chunk.js"
+  ]
+}
